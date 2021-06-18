@@ -1,13 +1,14 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.1.0alpha4" %}
+{% set version = "0.1.0beta1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/openforcefield/openff-interchange/archive/0.1.0-alpha.4.tar.gz
+  url: https://github.com/openforcefield/openff-interchange/archive/0.1.0-beta.1.tar.gz
   sha256: 2524fb25f21b10f9c2c48ebe02e08dc37e27984a80cf239736b87542033e979b
+  sha256: c03dc1e6523a5b7ab3c533ae6bdc4fce191cc0cf49c0a5189a991b109b8dcb44
 
 build:
   noarch: python
