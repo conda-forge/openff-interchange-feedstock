@@ -1,5 +1,5 @@
-About openff-interchange
-========================
+About openff-interchange-split
+==============================
 
 Home: https://openforcefield.org/
 
@@ -32,10 +32,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-openff--interchange-green.svg)](https://anaconda.org/conda-forge/openff-interchange) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openff-interchange.svg)](https://anaconda.org/conda-forge/openff-interchange) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openff-interchange.svg)](https://anaconda.org/conda-forge/openff-interchange) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openff-interchange.svg)](https://anaconda.org/conda-forge/openff-interchange) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-openff--interchange--base-green.svg)](https://anaconda.org/conda-forge/openff-interchange-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openff-interchange-base.svg)](https://anaconda.org/conda-forge/openff-interchange-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openff-interchange-base.svg)](https://anaconda.org/conda-forge/openff-interchange-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openff-interchange-base.svg)](https://anaconda.org/conda-forge/openff-interchange-base) |
 
-Installing openff-interchange
-=============================
+Installing openff-interchange-split
+===================================
 
-Installing `openff-interchange` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `openff-interchange-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -45,7 +45,7 @@ conda config --set channel_priority strict
 Once the `conda-forge` channel has been enabled, `openff-interchange, openff-interchange-base` can be installed with:
 
 ```
-conda install openff-interchange
+conda install openff-interchange openff-interchange-base
 ```
 
 It is possible to list all of the versions of `openff-interchange` available on your platform with:
