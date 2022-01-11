@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: openff-interchange-split
@@ -8,7 +8,7 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 850f8a5aa8768847975254ce93e5975f4df525699397fdbdcc2c649cf745fda8
+  sha256: 882a7c0f44aa6bcc1753ce151577ff7469a3baf8feb0d87232c582de70b993e1
 
 build:
   number: 0
@@ -24,7 +24,7 @@ outputs:
         - python
         - pip
       run:
-        - python >=3.7
+        - python >=3.8
         - numpy
         - pydantic
         - openff-toolkit-base >=0.10.0
@@ -44,9 +44,9 @@ outputs:
 
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
       run:
-        - python >=3.7
+        - python >=3.8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit >=0.10.0
         - openmm >=7.6
