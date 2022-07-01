@@ -6,3 +6,4 @@ channels:
   sources:
     - conda-forge
     - conda-forge/label/openff-toolkit_rc
+    - defaults
