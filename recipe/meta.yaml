@@ -47,7 +47,6 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit-base ==0.11.0rc1
         - openmm >=7.6
         - panedr
         - pandas
