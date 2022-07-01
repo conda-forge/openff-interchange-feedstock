@@ -2,3 +2,7 @@ conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+channels:
+  sources:
+    - conda-forge
+    - conda-forge/label/openff-toolkit_rc
