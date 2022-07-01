@@ -28,7 +28,7 @@ outputs:
         - numpy
         - pydantic
         - openmm >=7.6
-        - openff-toolkit-base ==0.11.0rc1
+        - openff-toolkit-base =>0.11.0rc1
         - openff-units >=0.1.6
         - openff-utilities >=0.1.5
       run_constrained:
@@ -48,7 +48,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit ==0.11.0rc1
+        - openff-toolkit =>0.11.0rc1
         - panedr
         - pandas
 
