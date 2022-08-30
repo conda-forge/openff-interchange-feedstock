@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.2.0rc6" %}
+{% set version = "0.2.0" %}
 
 package:
   name: openff-interchange-split
@@ -7,8 +7,8 @@ package:
 
 source:
   path: ./build_base.sh
-  url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v0.2.0-rc.6.tar.gz
-  sha256: 922e37288a009fdba8e82b31fb8fb77b5e2b38dc4751c626c0462cdef9b573bb
+  url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v0.2.0.tar.gz
+  sha256: 0cc4b4857b2466e2d7f9c78d88fcde5ddb672ff01fdd756965bd32c59a2f5142
 
 build:
   number: 0
