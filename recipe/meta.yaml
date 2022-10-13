@@ -55,6 +55,7 @@ outputs:
       # - openff.interchange
       requires:
         - openff-toolkit =0.11.0
+        - pip
       files:
         - test_stack_imports.py
       commands:
