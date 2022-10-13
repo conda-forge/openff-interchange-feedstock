@@ -58,6 +58,7 @@ outputs:
       files:
         - test_stack_imports.py
       commands:
+        - pip install git+https://github.com/openforcefield/openff-toolkit@0.11.0
         - python test_stack_imports.py
 
 about:
