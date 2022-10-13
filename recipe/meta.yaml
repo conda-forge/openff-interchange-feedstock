@@ -54,13 +54,13 @@ outputs:
       # imports:
       # - openff.interchange
       requires:
-        - openff-toolkit =0.11.0
+        - openff-toolkit =0.11.1
         - pip
         - git
       files:
         - test_stack_imports.py
       commands:
-        - pip install git+https://github.com/openforcefield/openff-toolkit@0.11.0
+        - pip install git+https://github.com/openforcefield/openff-toolkit@0.11.1
         - python test_stack_imports.py
 
 about:
