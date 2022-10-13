@@ -54,8 +54,7 @@ outputs:
       imports:
         - openff.interchange
       requires:
-        - rdkit
-        - ambertools
+        - openff-toolkit =0.11.0
       files:
         - test_stack_imports.py
       commands:
