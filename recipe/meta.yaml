@@ -33,9 +33,9 @@ outputs:
       run_constrained:
         - foyer >=0.11.3
 
-    test:
-      imports:
-        - openff.interchange
+#   test:
+#     imports:
+#       - openff.interchange
 
   - name: openff-interchange
     build:
