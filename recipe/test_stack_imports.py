@@ -1,9 +1,6 @@
-from openff.toolkit import Molecule, ForceField
-from openff.toolkit.utils.toolkits import (
-    GLOBAL_TOOLKIT_REGISTRY,
-    AmberToolsToolkitWrapper,
-    RDKitToolkitWrapper,
-)
+from openff.toolkit import *
+from openff.interchange import *
+from openff.toolkit.utils.toolkits import *
 
 
 assert RDKitToolkitWrapper().is_available()

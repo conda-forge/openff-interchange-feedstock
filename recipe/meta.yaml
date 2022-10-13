@@ -53,6 +53,9 @@ outputs:
     test:
       imports:
         - openff.interchange
+      requires:
+        - rdkit
+        - ambertools
       files:
         - test_stack_imports.py
       commands:
