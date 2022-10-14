@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: openff-interchange-split
@@ -8,7 +8,7 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 81da402c67af855399d14d2cd563bfa6f3dda72e6264d32d82005699c8c45bce
+  sha256: 236e41128a03fbaef36510234b825ec360967a1f96fe7dfd7722ced24f033727
 
 build:
   number: 0
@@ -31,11 +31,7 @@ outputs:
         - openff-units >=0.1.7
         - openff-utilities >=0.1.5
       run_constrained:
-        - foyer >=0.9.2
-
-    test:
-      imports:
-        - openff.interchange
+        - foyer >=0.11.3
 
   - name: openff-interchange
     build:
