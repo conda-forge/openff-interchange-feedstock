@@ -28,7 +28,7 @@ outputs:
         - pydantic <2.0.0a0
         - openmm >=7.6
         - openff-toolkit-base =>0.11.0
-        - openff-units >=0.1.7
+        - openff-units >=0.2.0
         - openff-utilities >=0.1.5
       run_constrained:
         - foyer >=0.11.3
