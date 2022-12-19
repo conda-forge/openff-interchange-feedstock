@@ -32,6 +32,7 @@ outputs:
         - openff-utilities >=0.1.5
       run_constrained:
         - foyer >=0.11.3
+        - jax =0.3
 
   - name: openff-interchange
     build:
