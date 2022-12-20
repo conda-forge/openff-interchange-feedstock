@@ -8,10 +8,10 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2d5646fbdfce9ddef0aef53ace09466d688012080c6ffda4869956dd5012d1d9
+  sha256: b2429b74a69977f97438317406489fec4e93a040a8d7cbe4f00d260d49a37882
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
@@ -32,6 +32,11 @@ outputs:
         - openff-utilities >=0.1.5
       run_constrained:
         - foyer >=0.11.3
+        - jax =0.3
+
+    test:
+      imports:
+        - openff.interchange
 
   - name: openff-interchange
     build:
