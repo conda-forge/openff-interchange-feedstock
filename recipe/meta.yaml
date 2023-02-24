@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.2.3" %}
+{% set version = "0.3.0beta1" %}
 
 package:
   name: openff-interchange-split
@@ -11,7 +11,7 @@ source:
   sha256: b2429b74a69977f97438317406489fec4e93a040a8d7cbe4f00d260d49a37882
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: openff-interchange-base
@@ -27,9 +27,10 @@ outputs:
         - python >=3.8
         - pydantic <2.0.0a0
         - openmm >=7.6
-        - openff-toolkit-base =>0.11.0
-        - openff-units >=0.2.0
+        - openff-toolkit-base =>0.12
+        - openff-units >=0.2
         - openff-utilities >=0.1.5
+        - openff-models
       run_constrained:
         - foyer >=0.11.3
         - jax =0.3
@@ -48,7 +49,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit =>0.11.0
+        - openff-toolkit =>0.12.0
         - panedr
 
     test:
