@@ -1,11 +1,11 @@
-About openff-interchange-split
-==============================
+About openff-interchange-split-feedstock
+========================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openff-interchange-feedstock/blob/main/LICENSE.txt)
 
 Home: https://openforcefield.org/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openff-interchange-feedstock/blob/main/LICENSE.txt)
 
 Summary: A project (and object) for storing, manipulating, and converting molecular mechanics data.
 
