@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.3.0beta3" %}
+{% set version = "0.3.0beta4" %}
 
 package:
   name: openff-interchange-split
