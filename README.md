@@ -149,6 +149,3 @@ Feedstock Maintainers
 * [@j-wags](https://github.com/j-wags/)
 * [@mattwthompson](https://github.com/mattwthompson/)
 
-
-<!-- dummy commit to enable rerendering -->
-
