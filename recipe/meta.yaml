@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: openff-interchange-split
@@ -21,10 +21,10 @@ outputs:
 
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
         - pip
       run:
-        - python >=3.8
+        - python >=3.9
         - pydantic <2.0.0a0
         - openmm >=7.6
         - openff-toolkit-base =>0.12.1
@@ -46,9 +46,9 @@ outputs:
 
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
       run:
-        - python >=3.8
+        - python >=3.9
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit =>0.12.1
         - panedr
