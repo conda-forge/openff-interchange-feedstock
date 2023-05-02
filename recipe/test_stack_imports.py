@@ -1,7 +1,7 @@
 import sys
 
-from openff.toolkit import *
-from openff.interchange import *
+from openff.toolkit import ForceField, Molecule
+from openff.interchange import Interchange
 from openff.toolkit.utils.toolkits import *
 
 for thing in [
@@ -10,7 +10,7 @@ for thing in [
     'Molecule',
     'Topology',
 ]:
-    assert thing in sys.modules
+    assert thing in sys.modules, f"{thing} failed to import"
 
 assert RDKitToolkitWrapper().is_available()
 assert AmberToolsToolkitWrapper().is_available()
