@@ -10,7 +10,7 @@ for thing in [
     'Molecule',
     'Topology',
 ]:
-    assert thing in sys.modules, f"{thing} failed to import"
+    assert thing in dir(), f"{thing} not in dir()"
 
 assert RDKitToolkitWrapper().is_available()
 assert AmberToolsToolkitWrapper().is_available()
