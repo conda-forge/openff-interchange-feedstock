@@ -9,6 +9,8 @@ source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 51e7e05af9a056e0945928ad9abad9919c40bb0be0efe6a0e9dc4c97b5c972fa
+  patches:
+    patches/0001-Remove-unnecessary-import.patch
 
 build:
   number: 0
