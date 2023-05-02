@@ -1,14 +1,18 @@
-import sys
-
-from openff.toolkit import ForceField, Molecule
-from openff.interchange import Interchange
+from openff.interchange import *
+from openff.toolkit import *
 from openff.toolkit.utils.toolkits import *
 
 for thing in [
-    'Interchange',
-    'ForceField',
-    'Molecule',
-    'Topology',
+    "Interchange",
+    "ForceField",
+    "Molecule",
+    "Topology",
+    "RDKitToolkitWrapper",
+    "OpenEyeToolkitWrapper",
+    "AmberToolsToolkitWrapper",
+    "BuiltInToolkitWrapper",
+    "ToolkitWrapper",
+    "GLOBAL_TOOLKIT_REGISTRY",
 ]:
     assert thing in dir(), f"{thing} not in dir()"
 
