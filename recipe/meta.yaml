@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: openff-interchange-split
@@ -8,10 +8,12 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b39df205a10bcc063946ae057f17aa4b0f2fe36584bbc862a3a9fb936e9685b5
+  sha256: 51e7e05af9a056e0945928ad9abad9919c40bb0be0efe6a0e9dc4c97b5c972fa
+  patches:
+    patches/0001-Remove-unnecessary-import.patch
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: openff-interchange-base
@@ -21,13 +23,13 @@ outputs:
 
     requirements:
       host:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
         - pip
       run:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
         - pydantic <2.0.0a0
         - openmm >=7.6
-        - openff-toolkit-base =>0.12.1
+        - openff-toolkit-base =>0.13
         - openff-units >=0.2
         - openff-utilities >=0.1.5
         - openff-models >=0.0.3
@@ -46,11 +48,11 @@ outputs:
 
     requirements:
       host:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
       run:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit =>0.12.1
+        - openff-toolkit =>0.13
         - panedr
 
     test:
