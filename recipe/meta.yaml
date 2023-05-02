@@ -21,10 +21,10 @@ outputs:
 
     requirements:
       host:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
         - pip
       run:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
         - pydantic <2.0.0a0
         - openmm >=7.6
         - openff-toolkit-base =>0.13
@@ -46,9 +46,9 @@ outputs:
 
     requirements:
       host:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
       run:
-        - python >=3.9
+        - python >=3.9,<3.11.0a0
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit =>0.13
         - panedr
