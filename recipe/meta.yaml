@@ -11,7 +11,7 @@ source:
   sha256: 77251315e9b9bdc13a0dece2430a0b7cb2a069588a6643edd8fe39f69d8bd237
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
