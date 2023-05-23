@@ -35,6 +35,7 @@ outputs:
         - foyer >=0.11.3
         - jax >=0.3
         - jaxlib >=0.3
+        - typing_extensions != 4.6.0
 
     test:
       imports:
