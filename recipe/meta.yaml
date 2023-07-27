@@ -11,7 +11,7 @@ source:
   sha256: 604863c602f7edc76f9bb99aa3ead40abcf5640a9e7b224adff0be9e4597804a
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
@@ -25,7 +25,7 @@ outputs:
         - pip
       run:
         - python >=3.9,<3.12.0a0
-        - pydantic >=1.10.8,<2.0.0a0
+        - pydantic =1.10.11
         - openmm >=7.6
         - openff-toolkit-base >=0.13
         - openff-units =0.2
