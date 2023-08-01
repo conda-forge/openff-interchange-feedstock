@@ -8,7 +8,7 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 604863c602f7edc76f9bb99aa3ead40abcf5640a9e7b224adff0be9e4597804a
+  sha256: 58b3d2ec05d5babe24761e58711ad01be7be57e5ae51b1721f7c494cc9c1056c
 
 build:
   number: 1
@@ -25,7 +25,7 @@ outputs:
         - pip
       run:
         - python >=3.9,<3.12.0a0
-        - pydantic =1.10.11
+        - pydantic >=1.10
         - openmm >=7.6
         - openff-toolkit-base >=0.13
         - openff-units =0.2
