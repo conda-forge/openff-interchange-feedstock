@@ -1,4 +1,0 @@
-channel_sources:
-  - conda-forge/label/openff-models_rc,conda-forge
-channel_targets:
-  - conda-forge openff-interchange_rc
