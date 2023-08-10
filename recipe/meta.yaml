@@ -11,7 +11,7 @@ source:
   sha256: a86a9df9e99f5224ba1d362ac2f1b2ce735173d25c427a8acb5d4f43262dfa9b
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
@@ -26,7 +26,6 @@ outputs:
       run:
         - python >=3.9,<3.12.0a0
         - pydantic >=1.10,<3.0.0a0
-        - openmm >=7.6
         - openff-toolkit-base >=0.14.3
         - openff-units =0.2
         - openff-utilities >=0.1.5
@@ -49,6 +48,7 @@ outputs:
         - python >=3.9,<3.12.0a0
       run:
         - python >=3.9,<3.12.0a0
+        - openmm >=7.6
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit >=0.14.3
         - panedr
