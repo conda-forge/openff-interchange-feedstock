@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.3.15" %}
+{% set version = "0.3.16" %}
 
 package:
   name: openff-interchange-split
@@ -8,7 +8,7 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8f32c305c44f509cd508f8c6edeeb3e7e0d557e6d93034ff36ecca56a99944c9
+  sha256: 93bda20f445aaf60b93779ec6087902556def808b334eccfbb3e8534d95c8765
 
 build:
   number: 0
@@ -48,7 +48,7 @@ outputs:
         - python >=3.9,<3.12.0a0
       run:
         - python >=3.9,<3.12.0a0
-        - openmm >=7.6
+        - openmm >=7.6,<9
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit >=0.14.3
         - panedr
