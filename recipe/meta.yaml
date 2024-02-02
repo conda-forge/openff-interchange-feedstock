@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.3.18" %}
+{% set version = "0.3.19" %}
 
 package:
   name: openff-interchange-split
@@ -8,7 +8,7 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2408d1667acce865e4475896152e3a2a824b7dd6b47d7c206e8712dab312b58f
+  sha256: fooobarrrrrr
 
 build:
   number: 0
@@ -26,12 +26,12 @@ outputs:
       run:
         - python >=3.9,<3.13.0a0
         - pydantic >=1.10,<3.0.0a0
-        - openff-toolkit-base >=0.14.3
+        - openff-toolkit-base >=0.15.2
         - openff-units =0.2
         - openff-utilities >=0.1.5
-        - openff-models
+        - openff-models >=0.1.2
       run_constrained:
-        - foyer >=0.11.3
+        - foyer >=0.12.1
         - jax >=0.3
         - jaxlib >=0.3
 
@@ -50,7 +50,7 @@ outputs:
         - python >=3.9,<3.13.0a0
         - openmm >=7.6,<9
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit >=0.14.3
+        - openff-toolkit  # Should respect constraint in base package
         - panedr
 
     test:
