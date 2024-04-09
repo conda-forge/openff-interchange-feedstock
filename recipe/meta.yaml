@@ -11,7 +11,7 @@ source:
   sha256: 231d8142b2f9a1c1f0835a914bd75ba2aa4b61653808fb91c88afb7d181288f5
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
@@ -34,6 +34,8 @@ outputs:
         - foyer >=0.12.1
         - jax >=0.3
         - jaxlib >=0.3
+        # https://github.com/openforcefield/openff-interchange/issues/960
+        - lammps >=2023.08.02
 
     test:
       imports:
