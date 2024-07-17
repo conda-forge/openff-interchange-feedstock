@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.3.27" %}
+{% set version = "0.3.28" %}
 
 package:
   name: openff-interchange-split
@@ -8,7 +8,7 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4d7dbd48672087b15abf3b73c3fb2eb86f8b6b2ab73ed26cf24dfd18bc228d23
+  sha256: 9d4e17f1ed730402177674319127cf8496da8845b9a840db810f02c4a401abe7
 
 build:
   number: 0
@@ -36,6 +36,7 @@ outputs:
         - jaxlib >=0.3
         # https://github.com/openforcefield/openff-interchange/issues/960
         - lammps >=2023.08.02
+        - smirnoff-plugins >=2024.07.0
 
     test:
       imports:
