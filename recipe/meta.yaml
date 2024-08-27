@@ -1,5 +1,5 @@
 {% set name = "openff-interchange" %}
-{% set version = "0.3.29" %}
+{% set version = "0.4.0beta1" %}
 
 package:
   name: openff-interchange-split
@@ -25,13 +25,12 @@ outputs:
         - pip
       run:
         - python >=3.10,<3.13.0a0
-        - pydantic >=1.10,<3.0.0a0
-        - openff-toolkit-base >=0.15.2,<0.17
+        - pydantic =2
+        - openff-toolkit-base ~=0.16.4
         - openff-units =0.2
         - openff-utilities >=0.1.5
-        - openff-models ~=0.1.2
       run_constrained:
-        - foyer >=0.12.1
+        - foyer =1
         - jax >=0.3
         - jaxlib >=0.3
         # https://github.com/openforcefield/openff-interchange/issues/960
