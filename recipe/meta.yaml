@@ -23,6 +23,7 @@ outputs:
       host:
         - python >=3.10,<3.13.0a0
         - pip
+        - setuptools
       run:
         - python >=3.10,<3.13.0a0
         - pydantic =2
