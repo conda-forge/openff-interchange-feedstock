@@ -54,7 +54,7 @@ outputs:
         - python >=3.10,<3.13.0a0
         - openmm >=7.6,<9
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit  # Should respect constraint in base package
+        - openff-toolkit ~=0.16.4
         - panedr
 
     test:
