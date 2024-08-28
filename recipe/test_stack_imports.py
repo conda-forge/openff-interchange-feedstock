@@ -27,7 +27,7 @@ molecule.generate_conformers()
 force_field = ForceField("openff-2.0.0.offxml")
 
 interchange = force_field.create_interchange(molecule.to_topology())
-interchange.to_openmm_simulation()
+interchange.to_openmm()
 interchange.to_gromacs("fOOO")
 interchange.to_lammps("bAAAR")
 interchange.to_prmtop("bAAAZ")
