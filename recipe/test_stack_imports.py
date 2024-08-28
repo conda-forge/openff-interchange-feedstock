@@ -7,6 +7,7 @@ for thing in [
     "ForceField",
     "Molecule",
     "Topology",
+    "Quantity",
     "RDKitToolkitWrapper",
     "OpenEyeToolkitWrapper",
     "AmberToolsToolkitWrapper",
@@ -25,5 +26,8 @@ molecule = Molecule.from_smiles("C")
 molecule.generate_conformers()
 force_field = ForceField("openff-2.0.0.offxml")
 
-force_field.create_openmm_system(molecule.to_topology())
-Interchange.from_smirnoff(force_field, [molecule])
+interchange = force_field.create_interchange(molecule.to_topology())
+interchange.to_openmm_simulation()
+interchange.to_gromacs("fOOO")
+interchange.to_lammps("bAAAR")
+interchange.to_prmtop("bAAAZ")
