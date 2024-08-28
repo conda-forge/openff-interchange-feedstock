@@ -32,9 +32,9 @@ assert AmberToolsToolkitWrapper().is_available()
 
 print(GLOBAL_TOOLKIT_REGISTRY.registered_toolkit_versions)
 
-molecule = Molecule.from_smiles("C")
+molecule = Molecule.from_smiles("N")
 molecule.generate_conformers()
-force_field = ForceField("openff-2.0.0.offxml")
+force_field = ForceField("openff-2.2.0.offxml")
 
 topology = molecule.to_topology()
 topology.box_vectors = Quantity([4, 4, 4], "nanometer")
