@@ -1,7 +1,7 @@
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge
+- conda-forge/label/openff-interchange_rc,conda-forge
 channel_targets:
 - conda-forge openff-interchange_rc
 docker_image:
