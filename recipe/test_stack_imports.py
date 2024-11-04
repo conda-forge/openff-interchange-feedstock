@@ -1,34 +1,30 @@
-from openff.interchange import Interchange
-from openff.toolkit import ForceField, Molecule, Topology, Quantity
-from openff.toolkit.utils.toolkits import (
-    RDKitToolkitWrapper,
-    OpenEyeToolkitWrapper,
-    AmberToolsToolkitWrapper,
-    BuiltInToolkitWrapper,
-    ToolkitWrapper,
-    GLOBAL_TOOLKIT_REGISTRY,
-)
 import openmm
 import openmm.unit
-
+import pydantic
+from openff.interchange import Interchange
+from openff.toolkit import ForceField, Molecule, Quantity, Topology
+from openff.toolkit.utils.toolkits import (
+    GLOBAL_TOOLKIT_REGISTRY,
+    AmberToolsToolkitWrapper,
+    BuiltInToolkitWrapper,
+    RDKitToolkitWrapper,
+)
 
 for thing in [
     "Interchange",
     "ForceField",
     "Molecule",
-    "Topology",
     "Quantity",
     "RDKitToolkitWrapper",
-    "OpenEyeToolkitWrapper",
     "AmberToolsToolkitWrapper",
     "BuiltInToolkitWrapper",
-    "ToolkitWrapper",
     "GLOBAL_TOOLKIT_REGISTRY",
 ]:
     assert thing in dir(), f"{thing} not in dir()"
 
 assert RDKitToolkitWrapper().is_available()
 assert AmberToolsToolkitWrapper().is_available()
+assert BuiltInToolkitWrapper().is_available()
 
 print(GLOBAL_TOOLKIT_REGISTRY.registered_toolkit_versions)
 
@@ -51,3 +47,10 @@ interchange.to_openmm_simulation(
 interchange.to_gromacs("fOOO")
 interchange.to_lammps("bAAAR")
 interchange.to_prmtop("bAAAZ")  # replace with to_amber when it exists ...
+
+
+class Model(pydantic.BaseModel):
+    x: Interchange
+
+
+Model.model_validate_json(Model(x=interchange).model_dump_json())
