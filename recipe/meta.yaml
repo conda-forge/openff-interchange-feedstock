@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "openff-interchange" %}
 {% set version = "0.4.0" %}
 
@@ -11,7 +12,7 @@ source:
   sha256: 8c31eaaf0cd4777ed5991f2bd2781dd4dc235322fe521b1eccf960b54016f2ec
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
@@ -21,12 +22,12 @@ outputs:
 
     requirements:
       host:
-        - python >=3.10,<3.13.0a0
+        - python {{ python_min }}
         - pip
         - setuptools
         - versioneer
       run:
-        - python >=3.10,<3.13.0a0
+        - python >={{ python_min }},<3.13.0a0
         - pydantic =2
         - openff-toolkit-base ~=0.16.4
         - openff-units =0.2
@@ -40,6 +41,8 @@ outputs:
         - smirnoff-plugins >=2024.07.0
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - openff.interchange
 
@@ -49,15 +52,17 @@ outputs:
 
     requirements:
       host:
-        - python >=3.10,<3.13.0a0
+        - python {{ python_min }}
       run:
-        - python >=3.10,<3.13.0a0
+        - python >={{ python_min }},<3.13.0a0
         - openmm >=7.6,<9
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit ~=0.16.4
         - panedr
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - openff.interchange
       files:
