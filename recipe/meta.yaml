@@ -1,7 +1,5 @@
-{% set python_min = '3.10' %}
 {% set name = "openff-interchange" %}
 {% set version = "0.4.0" %}
-{% set python_min = python_min|default("0.1a0") %}  # due to a bug in conda-build
 
 package:
   name: openff-interchange-split
