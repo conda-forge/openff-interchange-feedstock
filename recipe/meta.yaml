@@ -8,10 +8,10 @@ package:
 source:
   path: ./build_base.sh
   url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8c31eaaf0cd4777ed5991f2bd2781dd4dc235322fe521b1eccf960b54016f2ec
+  sha256: 56584ce93d3dd4e695b6e4f99d619e754ac2293547d34a373ec069f9950ff2ab
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
@@ -21,12 +21,12 @@ outputs:
 
     requirements:
       host:
-        - python >=3.10,<3.13.0a0
+        - python {{ python_min }}
         - pip
         - setuptools
         - versioneer
       run:
-        - python >=3.10,<3.13.0a0
+        - python >={{ python_min }},<3.13.0a0
         - pydantic =2
         - openff-toolkit-base ~=0.16.4
         - openff-units =0.2
@@ -40,6 +40,8 @@ outputs:
         - smirnoff-plugins >=2024.07.0
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - openff.interchange
 
@@ -49,15 +51,17 @@ outputs:
 
     requirements:
       host:
-        - python >=3.10,<3.13.0a0
+        - python {{ python_min }}
       run:
-        - python >=3.10,<3.13.0a0
+        - python >={{ python_min }},<3.13.0a0
         - openmm >=7.6,<9
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit ~=0.16.4
         - panedr
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - openff.interchange
       files:
