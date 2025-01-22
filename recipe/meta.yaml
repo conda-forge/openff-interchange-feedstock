@@ -1,17 +1,18 @@
+{% set org = "openforcefield" %}
 {% set name = "openff-interchange" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: openff-interchange-split
   version: {{ version }}
 
 source:
-  path: ./build_base.sh
-  url: https://github.com/openforcefield/openff-interchange/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 56584ce93d3dd4e695b6e4f99d619e754ac2293547d34a373ec069f9950ff2ab
+  git_url: https://github.com/{{ org }}/{{ name }}.git
+  git_rev: v{{ version }}
+  git_depth: -1
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: openff-interchange-base
@@ -24,7 +25,7 @@ outputs:
         - python {{ python_min }}
         - pip
         - setuptools
-        - versioneer
+        - versioningit
       run:
         - python >={{ python_min }},<3.13.0a0
         - pydantic =2
@@ -54,7 +55,7 @@ outputs:
         - python {{ python_min }}
       run:
         - python >={{ python_min }},<3.13.0a0
-        - openmm >=7.6,<9
+        - openmm =8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit ~=0.16.4
         - panedr
