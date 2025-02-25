@@ -1,4 +1,6 @@
 python_min:
   - '3.10'
+channel_sources:
+  - conda-forge/label/openff-interchange_rc,conda-forge
 channel_targets:
   - conda-forge openff-interchange_rc
