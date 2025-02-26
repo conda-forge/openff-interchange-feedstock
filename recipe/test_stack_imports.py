@@ -1,6 +1,7 @@
 import openmm
 import openmm.unit
 import pydantic
+from openff.units import Quantity
 from openff.interchange import Interchange
 from openff.toolkit import ForceField, Molecule, Quantity, Topology
 from openff.toolkit.utils.toolkits import (
