@@ -42,7 +42,7 @@ outputs:
 
     test:
       requires:
-        - python {{ python_min }}
+        - python 3.13
       imports:
         - openff.interchange
 
@@ -62,7 +62,7 @@ outputs:
 
     test:
       requires:
-        - python {{ python_min }}
+        - python 3.13
       imports:
         - openff.interchange
       files:
