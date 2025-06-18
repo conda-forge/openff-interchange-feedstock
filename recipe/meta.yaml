@@ -12,7 +12,7 @@ source:
   git_depth: -1
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: openff-interchange-base
@@ -54,7 +54,7 @@ outputs:
       host:
         - python {{ python_min }}
       run:
-        - python >={{ python_min }},<3.13.0a0
+        - python >={{ python_min }},<3.14.0a0
         - openmm =8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit ~=0.16.4
