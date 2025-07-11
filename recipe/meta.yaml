@@ -58,7 +58,7 @@ outputs:
         - openmm =8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit ~=0.16.4
-        - panedr
+        - pyedr
 
     test:
       requires:
