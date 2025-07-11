@@ -1,6 +1,6 @@
 {% set org = "openforcefield" %}
 {% set name = "openff-interchange" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 
 package:
   name: openff-interchange-split
@@ -12,7 +12,7 @@ source:
   git_depth: -1
 
 build:
-  number: 3
+  number: 0
 
 outputs:
   - name: openff-interchange-base
@@ -58,7 +58,7 @@ outputs:
         - openmm =8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
         - openff-toolkit ~=0.16.4
-        - panedr
+        - pyedr
 
     test:
       requires:
