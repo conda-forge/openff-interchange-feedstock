@@ -57,7 +57,7 @@ outputs:
         - python >={{ python_min }},<3.14.0a0
         - openmm =8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit ~=0.16.4
+        - openff-toolkit-base >=0.16.6,<0.18
         - pyedr
 
     test:
