@@ -12,7 +12,7 @@ source:
   git_depth: -1
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
