@@ -12,7 +12,7 @@ source:
   git_depth: -1
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: openff-interchange-base
@@ -28,7 +28,7 @@ outputs:
         - versioningit
       run:
         - python >={{ python_min }},<3.14.0a0
-        - pydantic =2
+        - pydantic =2,<2.12
         - openff-toolkit-base >=0.16.0,<0.18
         - openff-units >=0.2.0,<0.4.0
         - openff-utilities >=0.1.5
