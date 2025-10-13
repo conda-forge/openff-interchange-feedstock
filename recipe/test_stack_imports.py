@@ -55,3 +55,5 @@ class Model(pydantic.BaseModel):
 
 
 Model.model_validate_json(Model(x=interchange).model_dump_json())
+
+print(f"Used Pydantic version {pydantic.__version__=}")
