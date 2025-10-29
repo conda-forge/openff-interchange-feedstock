@@ -79,6 +79,7 @@ about:
   dev_url: https://github.com/openforcefield/openff-interchange
 
 extra:
+  feedstock-name: openff-interchange
   recipe-maintainers:
     - mattwthompson
     - j-wags
