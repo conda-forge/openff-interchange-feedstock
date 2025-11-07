@@ -29,12 +29,13 @@ assert BuiltInToolkitWrapper().is_available()
 
 print(GLOBAL_TOOLKIT_REGISTRY.registered_toolkit_versions)
 
-molecule = Molecule.from_smiles("N")
-molecule.generate_conformers()
-force_field = ForceField("openff-2.2.0.offxml")
+molecule = Molecule.from_smiles("CN1C=NC2=C1C(=O)N(C(=O)N2C)C")
+molecule.generate_conformers(n_conformers=1)
 
 topology = molecule.to_topology()
 topology.box_vectors = Quantity([4, 4, 4], "nanometer")
+
+force_field = ForceField("openff_no_water_unconstrained-3.0.0-alpha0.offxml")
 
 interchange = force_field.create_interchange(topology)
 
@@ -47,7 +48,7 @@ interchange.to_openmm_simulation(
 )
 interchange.to_gromacs("fOOO")
 interchange.to_lammps("bAAAR")
-interchange.to_prmtop("bAAAZ")  # replace with to_amber when it exists ...
+interchange.to_amber("bAAAZ")
 
 
 class Model(pydantic.BaseModel):
@@ -55,5 +56,4 @@ class Model(pydantic.BaseModel):
 
 
 Model.model_validate_json(Model(x=interchange).model_dump_json())
-
 print(f"Used Pydantic version {pydantic.__version__=}")
