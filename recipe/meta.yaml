@@ -1,6 +1,6 @@
 {% set org = "openforcefield" %}
 {% set name = "openff-interchange" %}
-{% set version = "0.4.11" %}
+{% set version = "0.5.0" %}
 
 package:
   name: openff-interchange-split
@@ -12,7 +12,7 @@ source:
   git_depth: -1
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: openff-interchange-base
@@ -25,7 +25,7 @@ outputs:
         - python {{ python_min }}
         - pip
         - setuptools
-        - versioningit
+        - setuptools_scm
       run:
         - python >={{ python_min }},<3.14.0a0
         - numpy <2.5

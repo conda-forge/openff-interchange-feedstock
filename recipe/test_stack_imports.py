@@ -35,25 +35,28 @@ molecule.generate_conformers(n_conformers=1)
 topology = molecule.to_topology()
 topology.box_vectors = Quantity([4, 4, 4], "nanometer")
 
-force_field = ForceField("openff_no_water_unconstrained-3.0.0-alpha0.offxml")
+for offxml in [
+    "openff_no_water_unconstrained-3.0.0-alpha0.offxml",
+    "openff-2.2.1.offxml",
+    "openff-2.3.0.offxml",
+]:
+    force_field = ForceField(offxml)
 
-interchange = force_field.create_interchange(topology)
+    interchange = force_field.create_interchange(topology)
 
-interchange.to_openmm_simulation(
-    integrator=openmm.LangevinMiddleIntegrator(
-        293.15 * openmm.unit.kelvin,
-        1.0 / openmm.unit.picosecond,
-        2.0 * openmm.unit.femtosecond,
+    interchange.to_openmm_simulation(
+        integrator=openmm.LangevinMiddleIntegrator(
+            293.15 * openmm.unit.kelvin,
+            1.0 / openmm.unit.picosecond,
+            2.0 * openmm.unit.femtosecond,
+        )
     )
-)
-interchange.to_gromacs("fOOO")
-interchange.to_lammps("bAAAR")
-interchange.to_amber("bAAAZ")
+    interchange.to_gromacs("fOOO")
+    interchange.to_lammps("bAAAR")
+    interchange.to_amber("bAAAZ")
 
+    class Model(pydantic.BaseModel):
+        x: Interchange
 
-class Model(pydantic.BaseModel):
-    x: Interchange
-
-
-Model.model_validate_json(Model(x=interchange).model_dump_json())
-print(f"Used Pydantic version {pydantic.__version__=}")
+    Model.model_validate_json(Model(x=interchange).model_dump_json())
+    print(f"Used Pydantic version {pydantic.__version__=}")
