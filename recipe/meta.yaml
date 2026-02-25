@@ -7,9 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/{{ org }}/{{ name }}.git
-  git_rev: v{{ version }}
-  git_depth: -1
+  url: https://github.com/{{ org }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 1b013f82dddcfd8766f23359e38434bf5edbdc4cb70043ac604fcc60938e4294
 
 build:
   number: 0
