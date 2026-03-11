@@ -10,7 +10,7 @@ from openff.toolkit.utils.toolkits import (
     RDKitToolkitWrapper,
 )
 
-assert __version__ != "0.0.0", "Version handling mangled!"
+assert __version__ != "0.0.0", f"Version handling mangled! Found {__version__}"
 
 for thing in [
     "Interchange",
