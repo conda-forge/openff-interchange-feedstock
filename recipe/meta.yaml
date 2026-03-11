@@ -9,6 +9,8 @@ package:
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 3124603dd1a82010aa861835a06e7187c372a59a230c2af722847b13cdf7e6b1
+  patches:
+    - patches/setuptools_scm_bump.patch
 
 build:
   number: 1
