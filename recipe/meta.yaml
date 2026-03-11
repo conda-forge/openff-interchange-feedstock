@@ -45,6 +45,8 @@ outputs:
         - python {{ python_min }}
       imports:
         - openff.interchange
+      commands:
+        - python -c "import openff.interchange; assert openff.interchange.__version__ == '{{ version }}', f'{openff.interchange.__version__}'"
 
   - name: openff-interchange
     build:
@@ -71,6 +73,7 @@ outputs:
       files:
         - test_stack_imports.py
       commands:
+        - python -c "import openff.interchange; assert openff.interchange.__version__ == '{{ version }}', f'{openff.interchange.__version__}'"
         - python test_stack_imports.py
 
 about:
