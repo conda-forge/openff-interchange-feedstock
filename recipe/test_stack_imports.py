@@ -1,15 +1,16 @@
 import openmm
 import openmm.unit
 import pydantic
-from openff.units import Quantity
-from openff.interchange import Interchange
-from openff.toolkit import ForceField, Molecule, Quantity, Topology
+from openff.interchange import Interchange, __version__
+from openff.toolkit import ForceField, Molecule, Quantity
 from openff.toolkit.utils.toolkits import (
     GLOBAL_TOOLKIT_REGISTRY,
     AmberToolsToolkitWrapper,
     BuiltInToolkitWrapper,
     RDKitToolkitWrapper,
 )
+
+assert __version__ != "0.0.0", f"Version handling mangled! Found {__version__}"
 
 for thing in [
     "Interchange",
