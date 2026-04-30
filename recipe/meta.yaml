@@ -73,6 +73,7 @@ outputs:
         - test_stack_imports.py
       commands:
         - python test_stack_imports.py
+        - which packmol  # doesn't seem to be a packmol --version or similar help command
 
 about:
   home: https://openforcefield.org/
