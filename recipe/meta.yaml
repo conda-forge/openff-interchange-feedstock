@@ -67,6 +67,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - packmol
       imports:
         - openff.interchange
       files:
