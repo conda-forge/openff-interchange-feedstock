@@ -5,7 +5,7 @@ from openff.interchange import Interchange, __version__
 from openff.toolkit import ForceField, Molecule, Quantity
 from openff.toolkit.utils.toolkits import (
     GLOBAL_TOOLKIT_REGISTRY,
-    AmberToolsToolkitWrapper,
+    NAGLToolkitWrapper,
     BuiltInToolkitWrapper,
     RDKitToolkitWrapper,
 )
@@ -18,14 +18,14 @@ for thing in [
     "Molecule",
     "Quantity",
     "RDKitToolkitWrapper",
-    "AmberToolsToolkitWrapper",
+    "NAGLToolkitWrapper",
     "BuiltInToolkitWrapper",
     "GLOBAL_TOOLKIT_REGISTRY",
 ]:
     assert thing in dir(), f"{thing} not in dir()"
 
 assert RDKitToolkitWrapper().is_available()
-assert AmberToolsToolkitWrapper().is_available()
+assert NAGLToolkitWrapper().is_available()
 assert BuiltInToolkitWrapper().is_available()
 
 print(GLOBAL_TOOLKIT_REGISTRY.registered_toolkit_versions)
@@ -38,7 +38,6 @@ topology.box_vectors = Quantity([4, 4, 4], "nanometer")
 
 for offxml in [
     "openff_no_water_unconstrained-3.0.0-alpha0.offxml",
-    "openff-2.2.1.offxml",
     "openff-2.3.0.offxml",
 ]:
     force_field = ForceField(offxml)
@@ -59,5 +58,5 @@ for offxml in [
     class Model(pydantic.BaseModel):
         x: Interchange
 
-    # Model.model_validate_json(Model(x=interchange).model_dump_json())
+    Model.model_validate_json(Model(x=interchange).model_dump_json())
     print(f"Used Pydantic version {pydantic.__version__=}")
