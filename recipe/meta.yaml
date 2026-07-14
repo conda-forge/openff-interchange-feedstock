@@ -29,8 +29,8 @@ outputs:
         - python >={{ python_min }}
         - numpy <2.5
         - pydantic >=2.13
-        - openff-toolkit-base >=0.16.0,<0.19
-        - openff-units
+        - openff-toolkit-base >=0.18,<0.19
+        - openff-units >=0.4.0beta1
         - openff-utilities >=0.1.5
       run_constrained:
         - foyer =1
@@ -60,7 +60,7 @@ outputs:
         - python >={{ python_min }}
         - openmm =8
         - {{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit >=0.17.0,<0.19
+        - openff-toolkit >=0.18.0,<0.19
         - openff-packmol
         - pyedr
 
