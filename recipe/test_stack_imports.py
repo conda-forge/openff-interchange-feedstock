@@ -45,7 +45,7 @@ for offxml in [
     force_field = ForceField(offxml)
 
     flag = random.random()
-    force_field["Electrostatics"].scale_14 = flag
+    force_field["Electrostatics"].scale14 = flag
 
     interchange = force_field.create_interchange(topology)
 
