@@ -1,6 +1,5 @@
 channel_sources:
-- conda-forge
-- conda-forge/label/openff-dev
+- conda-forge/label/openff-dev,conda-forge
 channel_targets:
 - conda-forge openff-dev
 docker_image:
