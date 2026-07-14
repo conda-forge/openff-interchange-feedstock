@@ -72,6 +72,8 @@ for offxml in [
     assert parsed_model.x["Electrostatics"].scale_14 == flag, (
         f"{parsed_model.x["Electrostatics"].scale_14=}"
     )
-    assert parsed_model.y.m_as("nanometer") == 2.1
+    assert parsed_model.y.m_as("nanometer") == 2.1, (
+        f"{parsed_model.y.m_as("nanometer") == 2.1=}"
+    )
 
     print(f"Used Pydantic version {pydantic.__version__=}")
