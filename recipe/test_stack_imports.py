@@ -1,3 +1,6 @@
+import math
+import random
+
 import openmm
 import openmm.unit
 import pydantic
@@ -5,8 +8,8 @@ from openff.interchange import Interchange, __version__
 from openff.toolkit import ForceField, Molecule, Quantity
 from openff.toolkit.utils.toolkits import (
     GLOBAL_TOOLKIT_REGISTRY,
-    NAGLToolkitWrapper,
     BuiltInToolkitWrapper,
+    NAGLToolkitWrapper,
     RDKitToolkitWrapper,
 )
 
@@ -42,6 +45,9 @@ for offxml in [
 ]:
     force_field = ForceField(offxml)
 
+    flag = random.random()
+    force_field["Electrostatics"].scale14 = flag
+
     interchange = force_field.create_interchange(topology)
 
     interchange.to_openmm_simulation(
@@ -57,6 +63,18 @@ for offxml in [
 
     class Model(pydantic.BaseModel):
         x: Interchange
+        y: Quantity
 
-    Model.model_validate_json(Model(x=interchange).model_dump_json())
+    parsed_model = Model.model_validate_json(
+        Model(x=interchange, y=Quantity("21 angstrom")).model_dump_json()
+    )
+
+    assert parsed_model.x is not None
+    assert parsed_model.x["Electrostatics"].scale_14 == flag, (
+        f"{parsed_model.x["Electrostatics"].scale_14=}"
+    )
+    assert math.isclose(parsed_model.y.m_as("nanometer"), 2.1), (
+        f"{parsed_model.y.m_as("nanometer")=}"
+    )
+
     print(f"Used Pydantic version {pydantic.__version__=}")
