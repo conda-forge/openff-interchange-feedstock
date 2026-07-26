@@ -70,6 +70,7 @@ outputs:
       requires:
         - python {{ python_min }}
         - packmol
+        - pytest
       imports:
         - openff.interchange
       files:
