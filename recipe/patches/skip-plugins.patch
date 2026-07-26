@@ -1,0 +1,24 @@
+diff --git a/openff/interchange/_tests/unit_tests/plugins/test_smirnoff_plugins.py b/openff/interchange/_tests/unit_tests/plugins/test_smirnoff_plugins.py
+index 13f3e898..1b9d61be 100644
+--- a/openff/interchange/_tests/unit_tests/plugins/test_smirnoff_plugins.py
++++ b/openff/interchange/_tests/unit_tests/plugins/test_smirnoff_plugins.py
+@@ -1,4 +1,7 @@
+ import pytest
++
++pytest.importorskip("nonbonded_plugins")
++
+ from nonbonded_plugins.nonbonded import (
+     BuckinghamHandler,
+     DoubleExponentialHandler,
+diff --git a/openff/interchange/_tests/unit_tests/smirnoff/test_create.py b/openff/interchange/_tests/unit_tests/smirnoff/test_create.py
+index 929bbd00..cb41f877 100644
+--- a/openff/interchange/_tests/unit_tests/smirnoff/test_create.py
++++ b/openff/interchange/_tests/unit_tests/smirnoff/test_create.py
+@@ -443,6 +443,7 @@ class TestPartialBondOrdersFromMolecules:
+ 
+ class TestCreateWithPlugins:
+     def test_setup_plugins(self):
++        pytest.importorskip("nonbonded_plugins")
+         from nonbonded_plugins.nonbonded import (
+             BuckinghamHandler,
+             SMIRNOFFBuckinghamCollection,
