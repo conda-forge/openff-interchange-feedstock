@@ -72,7 +72,6 @@ outputs:
         - ambertools >=24
         - openff-nagl-base
         - openff-nagl-models >=2025
-        - packmol
         - pytest
       imports:
         - openff.interchange
