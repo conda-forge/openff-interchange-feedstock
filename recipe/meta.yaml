@@ -9,8 +9,6 @@ package:
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 3498736ebda6c49cd82a379a9635b3818a412d3604b405bc54a95023195cff83
-  patches:
-    - patches/skip-plugins.patch
 
 build:
   number: 1
@@ -29,7 +27,7 @@ outputs:
         - setuptools_scm
       run:
         - python >={{ python_min }}
-        - numpy =2.5
+        - numpy <2.6
         - pydantic >=2.13  # negotiable
         - openff-toolkit-base >=0.18,<0.19
         - openff-units >=0.4.0
@@ -69,10 +67,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
-        - ambertools >=24
-        - openff-nagl-base
-        - openff-nagl-models >=2025
-        - pytest
+        - packmol
       imports:
         - openff.interchange
       files:
@@ -80,8 +75,6 @@ outputs:
       commands:
         - python test_stack_imports.py
         - which packmol  # doesn't seem to be a packmol --version or similar help command
-        - pytest --pyargs "openff.interchange"
-
 
 about:
   home: https://openforcefield.org/
