@@ -47,10 +47,12 @@ outputs:
           imports:
             - openff.interchange
           pip_check: false
-          python_version: ${{ python_min }}.*
+          python_version: ${{ python_min }}
       - requirements:
           run:
-            - python ${{ python_min }}
+            - python ${{ python_min }}.*
+        script:
+          - python --version
   - package:
       name: openff-interchange
     build:
@@ -79,7 +81,7 @@ outputs:
             - test_stack_imports.py
         requirements:
           run:
-            - python ${{ python_min }}
+            - python ${{ python_min }}.*
             - packmol
         script:
           - python test_stack_imports.py
@@ -97,4 +99,3 @@ extra:
   recipe-maintainers:
     - mattwthompson
     - j-wags
-
