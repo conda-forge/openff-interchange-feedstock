@@ -80,7 +80,7 @@ outputs:
       commands:
         - python test_stack_imports.py
         - which packmol  # doesn't seem to be a packmol --version or similar help command
-        - pytest --pyargs "openff.interchange
+        - pytest --pyargs "openff.interchange"
 
 
 about:
