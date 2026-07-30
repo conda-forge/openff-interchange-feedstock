@@ -69,6 +69,8 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - openff-nagl-base
+        - openff-nagl-models >=2025
         - packmol
         - pytest
       imports:
