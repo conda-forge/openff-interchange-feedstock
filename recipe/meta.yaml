@@ -69,6 +69,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - ambertools >=24
         - openff-nagl-base
         - openff-nagl-models >=2025
         - packmol
