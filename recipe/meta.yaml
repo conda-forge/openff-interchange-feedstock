@@ -11,7 +11,7 @@ source:
   sha256: 3498736ebda6c49cd82a379a9635b3818a412d3604b405bc54a95023195cff83
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openff-interchange-base
@@ -27,7 +27,7 @@ outputs:
         - setuptools_scm
       run:
         - python >={{ python_min }}
-        - numpy <2.5
+        - numpy <2.6
         - pydantic >=2.13  # negotiable
         - openff-toolkit-base >=0.18,<0.19
         - openff-units >=0.4.0
