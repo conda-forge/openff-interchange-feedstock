@@ -1,0 +1,105 @@
+schema_version: 1
+
+context:
+  org: openforcefield
+  name: openff-interchange
+  version: "0.5.4"
+
+recipe:
+  name: openff-interchange-split
+  version: ${{ version }}
+
+source:
+  url: https://github.com/${{ org }}/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 3498736ebda6c49cd82a379a9635b3818a412d3604b405bc54a95023195cff83
+
+build:
+  number: 2
+
+outputs:
+  - package:
+      name: openff-interchange-base
+    build:
+      noarch: python
+      script:
+        file: build_base.sh
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - setuptools
+        - setuptools_scm
+      run:
+        - python >=${{ python_min }}
+        - numpy <2.6
+        - pydantic >=2.13  # negotiable
+        - openff-toolkit-base >=0.18,<0.19
+        - openff-units >=0.4.0
+        - openff-utilities >=0.1.5
+      run_constraints:
+        - foyer =1
+        - jax >=0.3
+        - jaxlib >=0.3
+        - lammps >=2023.08.02
+        - smirnoff-plugins >=2024.07.0
+    tests:
+      - python:
+          imports:
+            - openff.interchange
+          pip_check: false
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+        script:
+          - python --version
+  - package:
+      name: openff-interchange
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - setuptools
+        - setuptools_scm
+      run:
+        - python >=${{ python_min }}
+        - openmm =8
+        - ${{ pin_subpackage('openff-interchange-base', exact=True) }}
+        - openff-toolkit >=0.18.0,<0.19
+        - openff-packmol
+        - pyedr
+    tests:
+      - python:
+          imports:
+            - openff.interchange
+          pip_check: false
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
+      - files:
+          recipe:
+            - test_stack_imports.py
+        requirements:
+          run:
+            - python ${{ python_min }}.*
+            - packmol
+        script:
+          - python test_stack_imports.py
+          - which packmol  # doesn't seem to be a packmol --version or similar help command
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: A project (and object) for storing, manipulating, and converting molecular mechanics data.
+  homepage: https://openforcefield.org/
+  repository: https://github.com/openforcefield/openff-interchange
+
+extra:
+  feedstock-name: openff-interchange
+  recipe-maintainers:
+    - mattwthompson
+    - j-wags
