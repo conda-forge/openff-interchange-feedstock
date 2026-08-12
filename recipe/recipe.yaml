@@ -47,7 +47,9 @@ outputs:
           imports:
             - openff.interchange
           pip_check: false
-          python_version: ${{ python_min }}
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
       - requirements:
           run:
             - python ${{ python_min }}.*
@@ -75,7 +77,9 @@ outputs:
           imports:
             - openff.interchange
           pip_check: false
-          python_version: ${{ python_min }}
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
       - files:
           recipe:
             - test_stack_imports.py
