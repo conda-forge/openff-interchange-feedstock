@@ -14,7 +14,7 @@ source:
   sha256: 3498736ebda6c49cd82a379a9635b3818a412d3604b405bc54a95023195cff83
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - package:
@@ -33,7 +33,7 @@ outputs:
         - python >=${{ python_min }}
         - numpy <2.6
         - pydantic >=2.13  # negotiable
-        - openff-toolkit-base >=0.18,<0.19
+        - openff-toolkit-base >=0.18,<0.20
         - openff-units >=0.4.0
         - openff-utilities >=0.1.5
       run_constraints:
@@ -69,7 +69,7 @@ outputs:
         - python >=${{ python_min }}
         - openmm =8
         - ${{ pin_subpackage('openff-interchange-base', exact=True) }}
-        - openff-toolkit >=0.18.0,<0.19
+        - openff-toolkit >=0.18.0,<0.20
         - openff-packmol
         - pyedr
     tests:
