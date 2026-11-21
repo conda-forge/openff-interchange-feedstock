@@ -3,7 +3,7 @@ schema_version: 1
 context:
   org: openforcefield
   name: openff-interchange
-  version: "0.5.5"
+  version: "0.5.5.post1"
 
 recipe:
   name: openff-interchange-split
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://github.com/${{ org }}/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: b1e1029579121339930440d30b46184bc76be2f29d1b44e55b8d16676627c82d
+  sha256: c267c71fe3d3f2174a5a8358251c4f0b5308ce14df28049976d7c9c017cc5e9c
 
 build:
   number: 0
